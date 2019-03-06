@@ -21,7 +21,7 @@ pipeline {
 		}
 		stage('Run Image'){
 			steps{
-				sh 'docker run -p 3000:8080 tdd-test'
+				sh 'docker run -v test:/app/test -v src:/app/src -p 3000:8080 tdd-test'
 			}
 		}
 		stage('Clear Docker'){
