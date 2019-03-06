@@ -21,6 +21,7 @@ pipeline {
 		}
 		stage('Run Image'){
 			steps{
+		 		sh 'ls'
 				sh 'docker run -v test:/app/test -v src:/app/src -p 3000:8080 tdd-test'
 			}
 		}
